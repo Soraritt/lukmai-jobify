@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  web: 
+    build:
+      context: "/home/tong/lukmai-jobify"
+      dockerfile: Dockerfile
+    image: test:V6    
+    container_name: test-V6
+    ports:
+       - "5000:5000" 
