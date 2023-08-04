@@ -5,7 +5,8 @@ import { FormRow, FormRowSelect, FormRowDatetime } from "..";
 import Wrapper from "../../assets/wrappers/JobRequest/JobRequestSearch";
 
 const JobRequestSearch = () => {
-  const { setFilterFn, isLoading, changePage } = useAppContext();
+  const { setFilterFn, isLoading, changePage, recordsAfterPagingAndSorting } =
+    useAppContext();
 
   const [localSearch, setLocalSearch] = useState({
     startDate: "",

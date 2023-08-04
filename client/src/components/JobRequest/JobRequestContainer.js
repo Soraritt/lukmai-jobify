@@ -7,7 +7,7 @@ import Loading from "../Loading";
 import Wrapper from "../../assets/wrappers/JobRequest/JobRequestContainer";
 import PageBtnContainer from "../PageBtnContainer";
 import { Popup, PopupDetails } from "../Popup";
-
+import { ExportToExcel } from "../ExportExcel/excelfile";
 const JobRequestContainer = () => {
   const {
     isLoading,
@@ -75,10 +75,29 @@ const JobRequestContainer = () => {
 
   return (
     <Wrapper>
-      <h5>
-        {recordsAfterPagingAndSorting().length} รายการ , วันที่ ปัจจุบัน{" "}
-        {moment().format("DD-MM-YYYY")}
-      </h5>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          margin: 0,
+          // marginBottom: "1.38rem",
+          justifyContent: "start",
+          lineHeight: 1.3,
+        }}
+      >
+        <h5>
+          {recordsAfterPagingAndSorting().length} รายการ , วันที่ ปัจจุบัน{" "}
+          {moment().format("DD-MM-YYYY")}
+        </h5>
+        <div
+          style={{
+            marginTop: "-0.875rem",
+            marginLeft: "1rem",
+          }}
+        >
+          <ExportToExcel reportData={recordsAfterPagingAndSorting()} />
+        </div>
+      </div>
       <table>
         <caption>รายการ Job sample Request</caption>
         <thead>
